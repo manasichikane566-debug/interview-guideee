@@ -132,7 +132,7 @@ CREATE TABLE IF NOT EXISTS achievement_views (
     cur.close()
     conn.close()
 
-
+init_db()
     # =========================================================
     # HOME
     # =========================================================
@@ -1723,8 +1723,6 @@ def admin():
 # =========================================================
 
 if __name__ == "__main__":
-
-    init_db()
 
     print("Database tables are ready.")
 

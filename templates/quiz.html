@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+
+ 
+
+{% block content %}
+
+ 
+
+<h2>Mock Quiz</h2>
+
+ 
+
+<p>
+
+    Select one correct answer for every question.
+
+</p>
+
+ 
+
+<form method="POST">
+
+ 
+
+{% for q in questions %}
+
+ 
+
+{% set qindex = loop.index0 %}
+
+ 
+
+<div class="question-card">
+
+ 
+
+    <h3>
+
+        {{ loop.index }}. {{ q.question }}
+
+    </h3>
+
+ 
+
+    {% for option in q.options %}
+
+ 
+
+    <label class="option">
+
+ 
+
+        <input
+
+            type="radio"
+
+            name="q{{ qindex }}"
+
+            value="{{ option }}"
+
+            required
+
+        >
+
+ 
+
+        {{ option }}
+
+ 
+
+    </label>
+
+ 
+
+    {% endfor %}
+
+ 
+
+</div>
+
+ 
+
+{% endfor %}
+
+ 
+
+<button
+
+    class="btn"
+
+    type="submit"
+
+> 
+
+    Submit Quiz
+
+</button>
+
+ 
+
+</form>
+
+ 
+
+{% endblock %}
+

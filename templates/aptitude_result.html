@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+
+    <div class="result-card">
+
+        <div style="font-size: 55px; margin-bottom: 10px;">
+            🎯
+        </div>
+
+        <h1>Aptitude Quiz Completed!</h1>
+
+        <p style="color: #6b7280; margin-bottom: 25px;">
+            Here is your quiz performance.
+        </p>
+
+        <div class="score">
+            {{ score }} / {{ total }}
+        </div>
+
+        <div style="
+            font-size: 28px;
+            font-weight: bold;
+            color: #2563eb;
+            margin-bottom: 20px;
+        ">
+            {{ percentage }}%
+        </div>
+
+        <div style="
+            background: #f3f4f6;
+            height: 14px;
+            border-radius: 20px;
+            overflow: hidden;
+            margin: 20px 0 30px;
+        ">
+
+            <div style="
+                width: {{ percentage }}%;
+                height: 100%;
+                background: #2563eb;
+                border-radius: 20px;
+            ">
+            </div>
+
+        </div>
+
+        {% if percentage >= 80 %}
+
+            <h2>🌟 Excellent Performance!</h2>
+
+            <p style="color: #6b7280; margin-top: 8px;">
+                Great job! Keep practicing to maintain your performance.
+            </p>
+
+        {% elif percentage >= 50 %}
+
+            <h2>👍 Good Effort!</h2>
+
+            <p style="color: #6b7280; margin-top: 8px;">
+                You have a good foundation. Practice more to improve your score.
+            </p>
+
+        {% else %}
+
+            <h2>📚 Keep Practicing!</h2>
+
+            <p style="color: #6b7280; margin-top: 8px;">
+                Review the topics and try the quiz again.
+            </p>
+
+        {% endif %}
+
+        <div style="margin-top: 30px;">
+
+            <a href="{{ url_for('aptitude_quiz') }}"
+               class="btn btn-primary">
+                🔄 Try Again
+            </a>
+
+            <a href="{{ url_for('aptitude_star') }}"
+               class="btn"
+               style="margin-left: 10px;">
+                📚 Back to Aptitude & STAR
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+

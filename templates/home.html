@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="hero">
+
+    <h1>Prepare Smarter for Your Interview</h1>
+
+    <p>
+        Practice technical questions, attempt mock quizzes,
+        learn interview tips and track your preparation progress.
+    </p>
+
+    <a class="btn" href="{{ url_for('questions') }}">
+        Start Preparation
+    </a>
+
+</section>
+
+
+<div class="cards">
+
+    <!-- Interview Questions -->
+    <a class="card" href="{{ url_for('questions') }}">
+
+        <h3>Interview Questions</h3>
+
+        <p>
+            Practice common technical and interview questions.
+        </p>
+
+    </a>
+
+
+    <!-- Mock Quiz -->
+    <a class="card" href="{{ url_for('quiz') }}">
+
+        <h3>Mock Quiz</h3>
+
+        <p>
+            Test your knowledge with multiple-choice questions.
+        </p>
+
+    </a>
+
+
+    <!-- Interview Tips -->
+    <a class="card" href="{{ url_for('tips') }}">
+
+        <h3>Interview Tips</h3>
+
+        <p>
+            Improve communication, confidence and interview behaviour.
+        </p>
+
+    </a>
+
+
+    <!-- Progress Tracker -->
+    <a class="card" href="{{ url_for('progress') }}">
+
+        <h3>Progress Tracker</h3>
+
+        <p>
+            View your quiz scores and monitor your improvement.
+        </p>
+
+    </a>
+<!-- HR Interview -->
+<a class="card" href="{{ url_for('hr_interview') }}">
+
+    <h3>HR Interview</h3>
+
+    <p>
+        Practice common HR interview questions and prepare your answers.
+    </p>
+
+</a>
+
+</div>
+
+{% endblock %}

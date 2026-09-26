@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="skill-detail">
+
+    <div class="skill-detail-icon">
+        📊
+    </div>
+
+    <h1>Progress Tracker</h1>
+
+    <p>
+        Track your interview preparation progress and improve
+        your performance step by step.
+    </p>
+
+    <div class="skill-tips">
+
+        <div class="skill-tip">
+            📝
+            <h3>Practice Regularly</h3>
+            <p>
+                Practice interview questions regularly to improve
+                your knowledge and confidence.
+            </p>
+        </div>
+
+        <div class="skill-tip">
+            🎯
+            <h3>Set Preparation Goals</h3>
+            <p>
+                Set small daily goals and complete them consistently.
+            </p>
+        </div>
+
+        <div class="skill-tip">
+            📚
+            <h3>Review Your Topics</h3>
+            <p>
+                Revise technical and communication topics before
+                attending an interview.
+            </p>
+        </div>
+
+        <div class="skill-tip">
+            🧠
+            <h3>Learn From Mistakes</h3>
+            <p>
+                Review incorrect answers and understand the correct
+                concepts.
+            </p>
+        </div>
+
+        <div class="skill-tip">
+            🏆
+            <h3>Improve Your Score</h3>
+            <p>
+                Attempt mock quizzes and try to improve your score
+                with every attempt.
+            </p>
+        </div>
+
+        <div class="skill-tip">
+            📈
+            <h3>Track Improvement</h3>
+            <p>
+                Compare your previous performance to see your
+                preparation progress.
+            </p>
+        </div>
+
+    </div>
+
+    <a class="btn" href="{{ url_for('home') }}">
+        ← Back to Home
+    </a>
+
+</div>
+
+{% endblock %}
+

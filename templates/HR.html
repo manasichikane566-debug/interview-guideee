@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HR Interview Questions</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>HR Interview Questions</h1>
+
+        <p>Practice these commonly asked HR interview questions.</p>
+
+        {% for item in questions %}
+
+        <div class="question-card">
+
+            <h3>
+                {{ loop.index }}. {{ item.question }}
+            </h3>
+
+            <p>
+                <strong>Suggested Answer:</strong>
+            </p>
+
+            <p>
+                {{ item.answer }}
+            </p>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</body>
+</html>

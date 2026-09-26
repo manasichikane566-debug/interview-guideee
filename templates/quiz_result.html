@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+ 
+
+{% block content %}
+
+ 
+
+<div class="result">
+
+ 
+
+    <h2>Quiz Completed! 🎉</h2>
+
+ 
+
+    <h1>
+
+        {{ score }} / {{ total }}
+
+    </h1>
+
+ 
+
+    <p>
+
+        Your Score:
+
+        <strong>
+
+            {{ percentage }}%
+
+        </strong>
+
+    </p>
+
+ 
+
+    <a
+
+        class="btn"
+
+        href="{{ url_for('progress') }}"
+
+    >
+
+        View Progress
+
+    </a>
+
+ 
+
+    <a
+
+        class="btn secondary"
+
+        href="{{ url_for('quiz') }}"
+
+    >
+
+        Try Again
+
+    </a>
+
+ 
+
+</div>
+
+ 
+
+{% endblock %}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Interview Guide</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<nav>
+
+    <div class="brand">
+        Interview Guide
+    </div>
+
+    <div class="navlinks">
+
+        <a href="{{ url_for('home') }}">
+            Home
+        </a>
+
+        <a href="{{ url_for('questions') }}">
+            Questions
+        </a>
+
+        <a href="{{ url_for('quiz') }}">
+            Mock Quiz
+        </a>
+
+        <a href="{{ url_for('tips') }}">
+            Tips
+        </a>
+
+        <a href="{{ url_for('technical_topics') }}">
+            Technical Topics
+        </a>
+        <a href="{{ url_for('aptitude_star') }}">
+            🎯 Aptitude & STAR
+        </a>
+        <a href="{{ url_for('hr_interview') }}">
+            HR Interview
+        </a>
+        <a href="{{ url_for('achievements') }}">
+            🏆 Achievements
+        </a>
+        <a href="{{ url_for('communication') }}">
+            🗣️ Communication
+        </a>
+        <a href="{{ url_for('admin') }}">
+            👥 Admin Panel
+        </a>
+
+        {% if session.get('user_id') %}
+
+            
+
+            <a href="{{ url_for('progress') }}">
+               Progress
+            </a>
+
+            <a href="{{ url_for('logout') }}">
+               Logout
+            </a>
+ 
+        {% else %}
+
+            <a href="{{ url_for('login') }}">
+                Login
+            </a>
+
+            <a href="{{ url_for('register') }}">
+                Register
+            </a>
+
+        {% endif %}
+
+    </div>
+
+</nav>
+
+
+<div class="container">
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+
+        {% for category, message in messages %}
+
+            <div class="alert {{ category }}">
+                {{ message }}
+            </div>
+
+        {% endfor %}
+
+    {% endwith %}
+
+
+    {% block content %}
+    {% endblock %}
+
+</div>
+
+
+<footer>
+
+    Interview Guide • Student Project
+
+</footer>
+
+</body>
+
+</html>

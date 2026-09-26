@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="admin-panel">
+
+<h1>👥 Admin Panel</h1>
+
+<p>
+    👤 Logged in as: <strong>{{ session.get('name') }}</strong>
+</p>
+
+<div class="admin-table-container">
+
+    <table class="admin-table">
+
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>👤 Student Name</th>
+                <th>📧 Email</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            {% for user in users %}
+
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ user["name"] }}</td>
+                <td>{{ user["email"] }}</td>
+            </tr>
+
+            {% else %}
+
+            <tr>
+                <td colspan="3">
+                    No students registered yet.
+                </td>
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+
+    </table>
+
+</div>
+
+
+</div>
+
+{% endblock %}

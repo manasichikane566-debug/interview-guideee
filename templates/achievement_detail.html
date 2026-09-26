@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="achievement-page">
+
+    <div class="achievement-icon">
+        {{ achievement.title.split(' ')[0] }}
+    </div>
+
+    <h1>
+        {{ achievement.title }}
+    </h1>
+
+    <p class="achievement-description">
+        {{ achievement.description }}
+    </p>
+
+
+    <div class="achievement-info">
+
+        <div class="info-box">
+
+            <h3>🎯 How to Earn</h3>
+
+            <p>
+                {{ achievement.how_to_earn }}
+            </p>
+
+        </div>
+
+
+        <div class="info-box">
+
+            <h3>⭐ Why It Matters</h3>
+
+            <p>
+                {{ achievement.benefit }}
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="achievement-status">
+
+        <span>
+            🏆 Achievement Available
+        </span>
+
+    </div>
+
+
+    <!-- ACTION BUTTON -->
+
+    <a
+        class="btn achievement-action"
+        href="{{ url_for(achievement.action_url) }}"
+    >
+        {{ achievement.action_text }}
+    </a>
+
+
+    <br><br>
+
+
+    <a
+        class="btn back-btn"
+        href="{{ url_for('achievements') }}"
+    >
+        ← Back to Achievements
+    </a>
+
+</div>
+
+{% endblock %}

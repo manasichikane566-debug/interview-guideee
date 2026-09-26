@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="hero">
+
+    <h1>🗣️ Communication & Interview Skills</h1>
+
+    <p>
+        Improve your communication, body language,
+        dressing sense and interview confidence.
+    </p>
+
+</section>
+
+
+<div class="communication-grid">
+
+<a href="{{ url_for('speaking_skills') }}" class="communication-card">
+
+    <div class="skill-icon">🗣️</div>
+
+    <h2>Speaking Skills</h2>
+
+    <p>
+        Speak clearly, confidently and at a comfortable pace.
+    </p>
+
+    <strong>Explore →</strong>
+
+</a>
+    
+
+
+<a href="{{ url_for('dressing_sense') }}" class="communication-card">
+
+    <div class="communication-icon">👔</div>
+
+    <h2>Dressing Sense</h2>
+
+    <p>
+        Learn how to maintain a neat and professional appearance
+        for your interview.
+    </p>
+
+    <span>Explore →</span>
+
+</a>
+
+
+<a href="{{ url_for('body_language') }}" class="communication-card">
+
+    <div class="communication-icon">
+        🧍
+    </div>
+
+    <h2>Body Language</h2>
+
+    <p>
+        Learn about posture, gestures and professional body language.
+    </p>
+
+    <span>Explore →</span>
+
+</a>
+
+
+
+    <a href="{{ url_for('eye_contact') }}" class="communication-card">
+
+    <div class="skill-icon">👀</div>
+
+    <h2>Eye Contact</h2>
+
+    <p>
+        Maintain natural eye contact while speaking.
+    </p>
+
+    <strong>Explore →</strong>
+
+</a>
+
+
+<a href="{{ url_for('interview_etiquette') }}" class="communication-card">
+
+    <div class="communication-icon">🤝</div>
+
+    <h2>Interview Etiquette</h2>
+
+    <p>
+        Learn professional manners and behavior to follow
+        during an interview.
+    </p>
+
+    <span>Explore →</span>
+
+</a>
+
+
+<a href="{{ url_for('confidence') }}" class="communication-card">
+
+    <div class="communication-icon">💪</div>
+
+    <h2>Confidence</h2>
+
+    <p>
+        Learn how to communicate confidently and stay calm
+        during an interview.
+    </p>
+
+    <span>Explore →</span>
+
+</a>
+
+</div>
+
+{% endblock %}

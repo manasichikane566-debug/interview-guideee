@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Technical Topics</h2> <p> Review important technical topics for your interview preparation. </p> <div class="cards">
+{% for topic in topics %}
+
+<div class="card">
+
+    <h3>{{ topic.name }}</h3>
+
+    <ul>
+
+        {% for subject in topic.topics %}
+
+        <li>{{ subject }}</li>
+
+        {% endfor %}
+
+    </ul>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+{% endblock %}

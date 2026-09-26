@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="skill-detail">
+
+    <div class="skill-detail-icon">
+        🗣️
+    </div>
+
+    <h1>Speaking Skills</h1>
+
+    <p>
+        Good speaking skills help you communicate your ideas
+        clearly and confidently during an interview.
+    </p>
+
+    <div class="skill-tips">
+
+        <div class="skill-tip">
+            🗣️
+            <h3>Speak Clearly</h3>
+            <p>
+                Speak clearly and make sure your answers are easy to understand.
+            </p>
+        </div>
+
+        <div class="skill-tip">
+            ⏱️
+            <h3>Maintain a Good Pace</h3>
+            <p>
+                Avoid speaking too fast or too slowly.
+            </p>
+        </div>
+
+        <div class="skill-tip">
+            💬
+            <h3>Keep Answers Relevant</h3>
+            <p>
+                Answer the question directly and avoid unnecessary details.
+            </p>
+        </div>
+
+        <div class="skill-tip">
+            😊
+            <h3>Speak with Confidence</h3>
+            <p>
+                Use a confident and positive tone while answering.
+            </p>
+        </div>
+
+    </div>
+
+    <a class="btn" href="{{ url_for('communication') }}">
+        ← Back to Communication Skills
+    </a>
+
+</div>
+
+{% endblock %}

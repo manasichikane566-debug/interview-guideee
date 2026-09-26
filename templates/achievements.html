@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="achievements-page">
+
+    <!-- Header -->
+    <div class="achievements-hero">
+
+        <div class="hero-icon">
+            🏆
+        </div>
+
+        <h1>
+            Your Achievements
+        </h1>
+
+        <p>
+            Explore your interview preparation achievements
+            and track your progress.
+        </p>
+
+
+        <!-- Progress -->
+        <div class="achievement-progress">
+
+            <div class="progress-header">
+
+                <h3>
+                    {{ explored_count }} /
+                    {{ total_achievements }}
+                    Achievements Explored
+                </h3>
+
+                <span>
+                    {{ progress }}%
+                </span>
+
+            </div>
+
+
+            <div class="progress-bar">
+
+                <div
+                    class="progress-fill"
+                    style="width: {{ progress }}%;">
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Achievement Cards -->
+    <div class="achievement-grid">
+
+        {% for achievement in achievements %}
+
+        <a
+            href="{{ url_for('achievement_detail', achievement_id=achievement.id) }}"
+            class="achievement-card achievement-{{ achievement.color }} {% if achievement.viewed %}explored{% endif %}"
+        >
+
+            <!-- Title -->
+            <div class="achievement-title">
+
+                <h2>
+                    {{ achievement.title }}
+                </h2>
+
+            </div>
+
+
+            <!-- Description -->
+            <p class="achievement-description">
+
+                {{ achievement.description }}
+
+            </p>
+
+
+            <!-- Status -->
+            <div class="achievement-status">
+
+                {% if achievement.viewed %}
+
+                    <span class="status-explored">
+                        ✓ Explored
+                    </span>
+
+                {% else %}
+
+                    <span class="status-locked">
+                        🔓 Explore Achievement
+                    </span>
+
+                {% endif %}
+
+            </div>
+
+
+            <!-- Arrow -->
+            <div class="achievement-arrow">
+                →
+            </div>
+
+        </a>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+{% endblock %}

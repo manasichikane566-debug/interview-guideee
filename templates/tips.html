@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Interview Tips</h2>
+
+<p>
+    Follow these tips to improve your interview preparation.
+</p>
+
+{% for tip in tips %}
+
+<div class="tip">
+
+    <strong>
+        Tip {{ loop.index }}:
+    </strong>
+
+    <p>
+        {{ tip }}
+    </p>
+
+</div>
+
+{% endfor %}
+
+{% endblock %}
